@@ -1,3 +1,7 @@
+# Color Cubes Smash
+[![CCS Gameplay](color-cubes-smash.jpg)]([https://youtu.be/txA7d0jqw8g?si=R84R4qaz3W_HVNYc](https://youtu.be/rCVCQc6vdic?si=t7K05cXAtlX9GuTs))
+Color Cubes Smash Gameplay: https://youtu.be/txA7d0jqw8g?si=R84R4qaz3W_HVNYc](https://youtu.be/rCVCQc6vdic?si=t7K05cXAtlX9GuTs
+
 Color Cubes Smash is a Hyper-casual Unity game inspired by timeless classics like Fruit Ninja and Smash Hit. <br>
 <br>
 This project explores precision-based tap gameplay where players must smash the correct colored cubes as they are tossed into play. It combines the fast-paced engagement of Fruit Ninja with the clean, atmospheric style of Smash Hit. <br>
