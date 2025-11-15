@@ -30,6 +30,23 @@ public class UIManager : MonoBehaviour
 
     public GameManager gameManager; // Assign in Inspector
 
+    [Header("Audio Settings UI")]
+    public Slider soundSlider;
+    public Slider musicSlider;
+
+    public GameObject soundOnIcon;
+    public GameObject soundOffIcon;
+
+    public GameObject musicOnIcon;
+    public GameObject musicOffIcon;
+
+    public AudioSource soundEffectsSource;
+    public AudioSource musicSource;
+
+    // A tiny buffer to detect "mute"
+    public float muteThreshold = 0.1f;
+
+
     Vector2 offRight, offLeft, center, pauseOffDown; // Directions
 
     void Awake()
@@ -286,4 +303,28 @@ public class UIManager : MonoBehaviour
         SetPanel(finishContainer, finishGroup, offRight, 0f, false);
         SetPanel(pauseContainer, pauseGroup, pauseOffDown, 0f, false);
     }
+
+    public void OnSoundSliderChanged()
+    {
+        if (soundEffectsSource != null)
+            soundEffectsSource.volume = soundSlider.value;
+
+        // Toggle icons (off when <= threshold)
+        bool isMuted = soundSlider.value <= muteThreshold;
+
+        soundOffIcon.SetActive(isMuted);
+        soundOnIcon.SetActive(!isMuted);
+    }
+
+    public void OnMusicSliderChanged()
+    {
+        if (musicSource != null)
+            musicSource.volume = musicSlider.value;
+
+        bool isMuted = musicSlider.value <= muteThreshold;
+
+        musicOffIcon.SetActive(isMuted);
+        musicOnIcon.SetActive(!isMuted);
+    }
+
 }
